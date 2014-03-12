@@ -11,22 +11,22 @@ Include the required dependencies in your HTML file.
 
 Include the following markup in your HTML:
 
-'''
+```
 	<div id="grabDropBar">
 	  <div name="bar"><div name="handle"></div></div>
 	  <input name="value" hidden="true" type="number" value="2" />
 	</div>
-'''
+```
 
 Call the javascript function when page loads:
 
-'''
+```
 	$('#maxMinAlertingBar').gslider({
 		/* your configuration */
 	});
-'''
+```
 
-'''
+```
       locked: false,
 			minColor: "#f9f9f9",
 			maxColor: "#eaeaea",
@@ -44,4 +44,4 @@ Call the javascript function when page loads:
 			valueAxis: [],
 			labelAxis: [],
 			defaultValue: undefined
-'''
+```
