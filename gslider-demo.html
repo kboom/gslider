@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>GSlider example</title>
+
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Open+Sans:300italic,400,300,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" type="text/css" href="semantic-dependency/semantic.min.css">
+  <link rel="stylesheet" type="text/css" href="gslider.css">
+  
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js"></script>
+  <script src="gslider.js"></script>  
+</head>
+
+<body>
+<h2>This bar is percentage-based.</h2>
+<div style="margin: 0 auto; width:250px; position:relative; margin-top:50px; margin-bottom:5px;">
+	<div id="percentageBar">
+	  <div name="bar"><div name="handle"></div></div>
+	  <input name="value" hidden="true" type="number" value="2" />
+	</div>
+</div>
+
+<h2>This bar is value-based.</h2>
+<div style="margin: 0 auto; width:250px; position:relative; margin-top:50px; margin-bottom:5px;">
+	<div id="valueBar">
+	  <div name="bar"><div name="handle"></div></div>
+	  <input name="value" hidden="true" type="number" value="2" />
+	</div>
+</div>
+
+<h2>This bar will be locked</h2>
+<div style="margin: 0 auto; width:250px; position:relative; margin-top:50px; margin-bottom:5px;">
+	<div id="lockedBar">
+	  <div name="bar"><div name="handle"></div></div>
+	  <input name="value" hidden="true" type="number" value="2" />
+	</div>
+</div>
+
+<h2>This bar will alert when min or max values are set</h2>
+<div style="margin: 0 auto; width:250px; position:relative; margin-top:50px; margin-bottom:5px;">
+	<div id="maxMinAlertingBar">
+	  <div name="bar"><div name="handle"></div></div>
+	  <input name="value" hidden="true" type="number" value="2" />
+	</div>
+</div>
+
+<h2>This bar will will update status when the handle is grabbed or dropped</h2>
+<div class="ui segment">
+<div id="grabDropState" style="text-align: middle; margin: 0 auto; width: 250px;">Grab it!</div>
+<div style="margin: 0 auto; width:250px; position:relative; margin-top:50px; margin-bottom:5px;">
+	<div id="grabDropBar">
+	  <div name="bar"><div name="handle"></div></div>
+	  <input name="value" hidden="true" type="number" value="2" />
+	</div>
+</div>
+</div>
+
+<script type="text/javascript">
+
+	$('#percentageBar').gslider();
+
+	$('#valueBar').gslider({
+		valueAxis: [ 10, 20, 30, 60, 90 ],
+		labelAxis: [ "10m", "20m", "0.5h", "1h", "1.5h" ]
+	});
+	
+	$('#lockedBar').gslider({
+		locked: true,
+		defaultValue: 25
+	});
+	
+	$('#maxMinAlertingBar').gslider({
+		defaultValue: 50,
+		onMaximized: function() { alert("Maximized!"); },
+		onMinimized: function() { alert("Minimized!"); }
+	});
+	
+	$('#grabDropBar').gslider({
+		defaultValue: 75,
+		onHandleGrab: function() { $("#grabDropState").text("Grabbed!"); },
+		onHandleDrop: function() { $("#grabDropState").text("Dropped!"); }
+	});
+	
+</script>
+
+</body>
+
+</html>
