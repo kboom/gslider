@@ -1,8 +1,6 @@
 #GSlider
 =======
 
-## What does it do?
-
 This is a simple jQuery-based slider. See the attached example to see what it can do.
 
 ## How do I use it?
