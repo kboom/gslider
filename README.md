@@ -12,7 +12,7 @@ Include the required dependencies in your HTML file.
 Include the following markup in your HTML:
 
 ```
-	<div id="grabDropBar">
+	<div id="yourSeekbar">
 	  <div name="bar"><div name="handle"></div></div>
 	  <input name="value" hidden="true" type="number" value="2" />
 	</div>
@@ -21,13 +21,15 @@ Include the following markup in your HTML:
 Call the javascript function when page loads:
 
 ```
-	$('#maxMinAlertingBar').gslider({
+	$('#yourSeekbar').gslider({
 		/* your configuration */
 	});
 ```
 
+== Configuration options
+
 ```
-      locked: false,
+      			locked: false,
 			minColor: "#f9f9f9",
 			maxColor: "#eaeaea",
 			handleColor: "#f0f0f0",
