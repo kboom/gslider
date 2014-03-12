@@ -1,11 +1,11 @@
-=GSlider
+#GSlider
 =======
 
-== What does it do?
+## What does it do?
 
 This is a simple jQuery-based slider. See the attached example to see what it can do.
 
-== How to use it?
+## How do I use it?
 
 Include the required dependencies in your HTML file.
 
@@ -26,7 +26,7 @@ $('#yourSeekbar').gslider({
 });
 ```
 
-== Configuration options
+## Configuration options
 
 You can use any of those options, just push it into the json configuration object.
 The following values are the default ones.
