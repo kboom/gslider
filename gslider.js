@@ -147,14 +147,14 @@
 	var inputChanged = function() {
 		var percentage = this.pointIndex === undefined ? this.$input.val() : this.percentageAxis[this.pointIndex];
 		this.$bar.css("width", percentage+"%");
-		var leftOffset = this.$body.width() * (percentage / 100) - this.marginLeft;
+		var leftOffset = percentage;
 		var $handle = this.$handle;
 		if(percentage == 0) {
 			$handle.css("background-color", this.minColor);
 		} else if(percentage == 100) {
 			$handle.css("background-color", this.maxColor);
 		} else $handle.css("background-color", this.handleColor);
-		$handle.css("left", leftOffset+"px");
+		$handle.css("left", leftOffset+"%");
 	};
 	
 	var pushStyles = function() {
@@ -283,6 +283,7 @@
 			pushData.call(slider);
 			pushStyles.call(slider);
 			computeDimensions.call(slider);
+			slider.$handle.css("margin-left", -slider.marginLeft);
 			$(this).data('gslider', slider);
 			slider.$input.change(function() { 
 				inputChanged.apply(slider, arguments); 
